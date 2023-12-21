@@ -27,3 +27,15 @@ body {
 .box {
   border: 1px solid pink;
 }
+
+/* .swiper-button-next,
+.swiper-button-prev {
+  color: transparent;
+  font-size: 1px;
+  --swiper-navigation-size: 20px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: rgb(255, 162, 178);
+} */

@@ -1,5 +1,3 @@
-const swiper = new Swiper(".swiper", {
-  loop: true,
-  // direction: "vertical",
-  speed: 2000,
-});
+const boxes = document.querySelectorAll(".box");
+
+boxes[0].insertAdjacentHTML("beforebegin", slidesTemplate(1));
