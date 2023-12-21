@@ -11,21 +11,21 @@ body {
 }
 
 .container {
-  width: 600px;
-  height: 600px;
+  width: 620px;
+  height: 620px;
   border: 5px solid black;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
 }
 
+.box {
+  border: 1px solid pink;
+}
+
 .swiper {
   width: 120px;
   height: 120px;
-}
-
-.box {
-  border: 1px solid pink;
 }
 
 /* .swiper-button-next,
