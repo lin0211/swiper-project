@@ -4,5 +4,4 @@ export const swiperSetting = {
   effect: "flip",
   grabCursor: true,
   allowTouchMove: true,
-  //touchStartPreventDefault: false,
 };
