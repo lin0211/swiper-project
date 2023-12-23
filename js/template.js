@@ -1,4 +1,12 @@
-let id = 0;
+import { data } from "./data.js";
+let slideId = 0;
+let boxId = 0;
+
+// export const boxTemplate = () => {
+//   return /* html */ `
+//   <li class="box box${++boxId}"></li>
+//   `;
+// };
 
 const slideTemplate = ({ src, alt }) => {
   return /* html */ `
@@ -8,10 +16,10 @@ const slideTemplate = ({ src, alt }) => {
   `;
 };
 
-const slidesTemplate = (Index) => {
+export const slidesTemplate = (Index) => {
   const rectangle = `Rectangle${Index}`;
   const rectangleData = data[rectangle];
-  const swiperID = `swiper${++id}`;
+  const swiperID = `swiper${++slideId}`;
   let slides = "";
 
   rectangleData.forEach((item) => {

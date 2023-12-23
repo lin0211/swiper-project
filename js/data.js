@@ -1,4 +1,4 @@
-const data = {
+export const data = {
   Rectangle1: [
     {
       id: "1-1",

@@ -1,38 +1,28 @@
-const swiperSetting = {
-  loop: true,
-  effect: "flip",
-  grabCursor: true,
-};
+import { insertLast, slidesTemplate, swiperSetting } from "./js/index.js";
+
 const swipers = [];
-const boxes = document.querySelectorAll(".box");
+const boxes = document.querySelector(".boxes");
+const box = document.querySelectorAll(".box");
+const slideTemplateOrder = [
+  3, 4, 3, 2, 3, 2, 1, 3, 5, 4, 4, 3, 4, 3, 1, 1, 1, 5, 2, 3, 3, 3, 4, 1, 2,
+];
 
-boxes[0].insertAdjacentHTML("afterbegin", slidesTemplate(3));
-boxes[1].insertAdjacentHTML("afterbegin", slidesTemplate(4));
-boxes[2].insertAdjacentHTML("afterbegin", slidesTemplate(3));
-boxes[3].insertAdjacentHTML("afterbegin", slidesTemplate(2));
-boxes[4].insertAdjacentHTML("afterbegin", slidesTemplate(3));
-boxes[5].insertAdjacentHTML("afterbegin", slidesTemplate(2));
-boxes[6].insertAdjacentHTML("afterbegin", slidesTemplate(1));
-boxes[7].insertAdjacentHTML("afterbegin", slidesTemplate(3));
-boxes[8].insertAdjacentHTML("afterbegin", slidesTemplate(5));
-boxes[9].insertAdjacentHTML("afterbegin", slidesTemplate(4));
-boxes[10].insertAdjacentHTML("afterbegin", slidesTemplate(4));
-boxes[11].insertAdjacentHTML("afterbegin", slidesTemplate(3));
-boxes[12].insertAdjacentHTML("afterbegin", slidesTemplate(4));
-boxes[13].insertAdjacentHTML("afterbegin", slidesTemplate(3));
-boxes[14].insertAdjacentHTML("afterbegin", slidesTemplate(1));
-boxes[15].insertAdjacentHTML("afterbegin", slidesTemplate(1));
-boxes[16].insertAdjacentHTML("afterbegin", slidesTemplate(1));
-boxes[17].insertAdjacentHTML("afterbegin", slidesTemplate(5));
-boxes[18].insertAdjacentHTML("afterbegin", slidesTemplate(2));
-boxes[19].insertAdjacentHTML("afterbegin", slidesTemplate(3));
-boxes[20].insertAdjacentHTML("afterbegin", slidesTemplate(3));
-boxes[21].insertAdjacentHTML("afterbegin", slidesTemplate(3));
-boxes[22].insertAdjacentHTML("afterbegin", slidesTemplate(4));
-boxes[23].insertAdjacentHTML("afterbegin", slidesTemplate(1));
-boxes[24].insertAdjacentHTML("afterbegin", slidesTemplate(2));
+slideTemplateOrder.forEach((item, index) => {
+  // boxes[index].insertAdjacentHTML("afterbegin", slidesTemplate(item));
+  insertLast(box[index], slidesTemplate(item));
+});
 
-boxes.forEach((_, index) => {
+box.forEach((_, index) => {
   const boxNum = `#swiper${index + 1}`;
   swipers[index] = new Swiper(boxNum, swiperSetting);
 });
+
+const handleRouteCheck = (e) => {
+  e.preventDefault();
+  const target = e.target;
+  const li = target.closest(".swiper");
+  if (!li) return;
+  console.log(target);
+};
+
+boxes.addEventListener("mouseup", handleRouteCheck);
