@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>swiper project</title>
+
     <link rel="stylesheet" href="./css/reset.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./index.js" type="module"></script>
   </head>
@@ -17,7 +19,11 @@
     <h1 class="title">당근🥕으로 이어지는 길을 만들어 주세요</h1>
     <div class="container">
       <div class="start">
-        <img src="./assets/bunny.png" alt="오른쪽으로 이동하는 토끼" />
+        <img
+          id="bunny"
+          src="./assets/bunny.png"
+          alt="오른쪽으로 이동하는 토끼"
+        />
       </div>
       <ul class="boxes">
         <li class="box box1"></li>
@@ -47,9 +53,21 @@
         <li class="box box25"></li>
       </ul>
       <div class="end">
-        <img src="./assets/carrot.png" alt="오른쪽으로 이동하는 토끼" />
+        <img
+          id="carrot"
+          src="./assets/carrot.png"
+          alt="오른쪽으로 이동하는 토끼"
+        />
       </div>
     </div>
     <button type="submit" class="completeBtn">정답 확인</button>
+    <div class="modal-wrapper">
+      <div class="modal">
+        <p class="modalText">모달창</p>
+        <img class="modalImg" src="./assets/bunny.png" alt="달려가는 토끼" />
+        <button class="modalBtn modalRestartBtn">다시하기</button>
+        <button class="modalBtn modalCloseBtn">닫기</button>
+      </div>
+    </div>
   </body>
 </html>

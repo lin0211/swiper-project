@@ -3,6 +3,8 @@ import {
   insertLast,
   slidesTemplate,
   swiperSetting,
+  moveBunny,
+  modalSetting,
 } from "./js/index.js";
 
 const swipers = [];
@@ -11,9 +13,14 @@ const complete = document.querySelector(".completeBtn");
 const slideTemplateOrder = [
   3, 1, 3, 2, 3, 2, 1, 3, 5, 4, 4, 3, 4, 3, 1, 1, 1, 5, 2, 3, 3, 3, 4, 1, 2,
 ];
+const modal = document.querySelector(".modal-wrapper");
+const modalRestartBtn = document.querySelector(".modalRestartBtn");
+const modalCloseBtn = document.querySelector(".modalCloseBtn");
+
+const modalText = document.querySelector(".modalText");
+const modalImg = document.querySelector(".modalImg");
 
 slideTemplateOrder.forEach((item, index) => {
-  // boxes[index].insertAdjacentHTML("afterbegin", slidesTemplate(item));
   insertLast(box[index], slidesTemplate(item));
 });
 
@@ -31,11 +38,47 @@ const handleRouteCheck = (e) => {
       break;
     }
   }
-  if (status) {
-    alert("정답!");
-  } else {
-    alert("땡!");
+
+  // if (status) {
+  //   moveBunny();
+  //   modalSetting("success", modalText, modalImg, modal);
+  // } else {
+  //   modalSetting("fail", modalText, modalImg, modal);
+  // }
+
+  // if (status) {
+  //   moveBunny();
+  //   modalSetting("success", modalText, modalImg, modal);
+  // } else {
+  //   modalSetting("fail", modalText, modalImg, modal);
+  // }
+
+  async function successFail() {
+    let promise = new Promise((resolve, reject) => {
+      if (status) {
+        moveBunny();
+        resolve("success");
+      } else {
+        modalSetting("fail", modalText, modalImg, modal);
+      }
+    });
+
+    promise.then((value) => {
+      modalSetting(value, modalText, modalImg, modal);
+    });
   }
+  successFail();
 };
 
 complete.addEventListener("click", handleRouteCheck);
+
+const handleRestart = () => {
+  window.location.reload();
+};
+
+const handleClose = () => {
+  modal.style.display = "none";
+};
+
+modalRestartBtn.addEventListener("click", handleRestart);
+modalCloseBtn.addEventListener("click", handleClose);
