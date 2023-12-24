@@ -14,5 +14,6 @@ export const moveBunny = () => {
     .to("#bunny", { x: 600, y: -360, ease: "none" })
     .to("#bunny", { x: 600, y: -480, ease: "none" })
     .to("#bunny", { x: 720, y: -480, ease: "none" })
-    .to("#carrot", { x: 30, y: -10, scale: 0.3, ease: "none" });
+    .to("#carrot", { x: 30, y: -10, scale: 0.3, ease: "none" })
+    .to(".modal-wrapper", { opacity: 1, display: "block" });
 };

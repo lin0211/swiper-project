@@ -39,35 +39,12 @@ const handleRouteCheck = (e) => {
     }
   }
 
-  // if (status) {
-  //   moveBunny();
-  //   modalSetting("success", modalText, modalImg, modal);
-  // } else {
-  //   modalSetting("fail", modalText, modalImg, modal);
-  // }
-
-  // if (status) {
-  //   moveBunny();
-  //   modalSetting("success", modalText, modalImg, modal);
-  // } else {
-  //   modalSetting("fail", modalText, modalImg, modal);
-  // }
-
-  async function successFail() {
-    let promise = new Promise((resolve, reject) => {
-      if (status) {
-        moveBunny();
-        resolve("success");
-      } else {
-        modalSetting("fail", modalText, modalImg, modal);
-      }
-    });
-
-    promise.then((value) => {
-      modalSetting(value, modalText, modalImg, modal);
-    });
+  if (status) {
+    moveBunny();
+    modalSetting("success", modalText, modalImg, modal, true);
+  } else {
+    modalSetting("fail", modalText, modalImg, modal, false);
   }
-  successFail();
 };
 
 complete.addEventListener("click", handleRouteCheck);
