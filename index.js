@@ -31,6 +31,10 @@ box.forEach((_, index) => {
 
 const handleRouteCheck = (e) => {
   e.preventDefault();
+
+  e.target.setAttribute("disabled", "");
+  swipers.forEach((a) => (a.allowTouchMove = false));
+
   let status = true;
   for (let i = 0; i < swipers.length; i++) {
     if (!answer[`swipers[${i}]`].includes(swipers[i].realIndex)) {
@@ -38,7 +42,6 @@ const handleRouteCheck = (e) => {
       break;
     }
   }
-
   if (status) {
     moveBunny();
     modalSetting("success", modalText, modalImg, modal, true);
@@ -51,10 +54,14 @@ complete.addEventListener("click", handleRouteCheck);
 
 const handleRestart = () => {
   window.location.reload();
+  complete.removeAttribute("disabled");
+  swipers.forEach((a) => (a.allowTouchMove = true));
 };
 
 const handleClose = () => {
   modal.style.display = "none";
+  complete.removeAttribute("disabled");
+  swipers.forEach((a) => (a.allowTouchMove = true));
 };
 
 modalRestartBtn.addEventListener("click", handleRestart);

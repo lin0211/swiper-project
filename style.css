@@ -96,6 +96,10 @@ li {
   border: 3px solid rgb(69, 69, 69);
 }
 
+.completeBtn:disabled {
+  cursor: not-allowed;
+}
+
 .modal-wrapper {
   display: none;
   position: absolute;

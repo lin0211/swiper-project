@@ -1,6 +1,7 @@
 export const moveBunny = () => {
   const tl = gsap.timeline({ repeat: 0 });
-  tl.to("#bunny", { x: 120, ease: "none" })
+  tl.to("#bunny", { x: 0, y: 0, ease: "none" })
+    .to("#bunny", { x: 120, ease: "none" })
     .to("#bunny", { x: 120, y: -120, ease: "none" })
     .to("#bunny", { x: 120, y: -240, ease: "none" })
     .to("#bunny", { x: 120, y: -360, ease: "none" })
