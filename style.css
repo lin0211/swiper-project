@@ -13,6 +13,7 @@
 body {
   display: flex;
   flex-flow: column nowrap;
+  width: 100%;
   height: 100vh;
   justify-content: center;
   align-items: center;
@@ -32,6 +33,7 @@ li {
 .title {
   margin: 30px;
   color: rgb(69, 69, 69);
+  font-size: 30px;
 }
 
 .container {
@@ -42,14 +44,15 @@ li {
 
 .start,
 .end {
-  width: 120px;
-  height: 120px;
+  width: 7.5rem;
+  height: 7.5rem;
   font-size: 34px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(./assets/Rectangle\ 1-1.png);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .start {
@@ -60,6 +63,13 @@ li {
 #bunny {
   position: absolute;
   z-index: 10;
+  width: 5.625rem;
+  height: 7.0625rem;
+}
+
+#carrot {
+  width: 5.625rem;
+  height: 5.625rem;
 }
 
 .end {
@@ -67,16 +77,16 @@ li {
 }
 
 .boxes {
-  width: 610px;
-  height: 610px;
+  width: 38.125rem;
+  height: 38.125rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
 }
 
 .swiper {
-  width: 120px;
-  height: 120px;
+  width: 7.5rem;
+  height: 7.5rem;
 }
 
 .completeBtn {
@@ -132,6 +142,7 @@ li {
   width: 100px;
   margin: 10px;
   font-weight: 500;
+  font-size: 16px;
 }
 
 .modalBtn:hover {
@@ -143,4 +154,24 @@ li {
   margin: auto;
   width: 200px;
   height: 200px;
+}
+
+@media screen and (max-width: 1000px) {
+  * {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 800px) {
+  * {
+    font-size: 8px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .modalText {
+    font-size: 20px;
+  }
+  .completeBtn {
+    width: 150px;
+  }
 }
