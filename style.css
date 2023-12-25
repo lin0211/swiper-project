@@ -39,6 +39,7 @@ li {
 .explanation {
   color: rgb(69, 69, 69);
   font-size: 1.4rem;
+  margin-bottom: 0.4rem;
 }
 
 .container {
