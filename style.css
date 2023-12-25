@@ -36,6 +36,11 @@ li {
   font-size: 30px;
 }
 
+.explanation {
+  color: rgb(69, 69, 69);
+  font-size: 1.4rem;
+}
+
 .container {
   display: flex;
   gap: 1px;
@@ -57,7 +62,7 @@ li {
 
 .start {
   margin-top: auto;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 #bunny {
