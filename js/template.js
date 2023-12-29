@@ -2,12 +2,6 @@ import { data } from "./data.js";
 let slideId = 0;
 let boxId = 0;
 
-// export const boxTemplate = () => {
-//   return /* html */ `
-//   <li class="box box${++boxId}"></li>
-//   `;
-// };
-
 const slideTemplate = ({ src, alt }) => {
   return /* html */ `
   <div class="swiper-slide">
