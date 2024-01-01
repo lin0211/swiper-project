@@ -33,16 +33,16 @@ const handleRouteCheck = (e) => {
   e.preventDefault();
 
   e.target.setAttribute("disabled", "");
-  swipers.forEach((a) => (a.allowTouchMove = false));
+  swipers.forEach((swiper) => (swiper.allowTouchMove = false));
 
-  let status = true;
+  let isAnswer = true;
   for (let i = 0; i < swipers.length; i++) {
     if (!answer[`swipers[${i}]`].includes(swipers[i].realIndex)) {
-      status = false;
+      isAnswer = false;
       break;
     }
   }
-  if (status) {
+  if (isAnswer) {
     // 애니메이션이 끝난 후 성공 모달창 활성화 시도
     // moveBunny().then(() => {
     //   modalSetting("success", modalText, modalImage, modal);
@@ -60,13 +60,13 @@ completeButton.addEventListener("click", handleRouteCheck);
 const handleRestart = () => {
   window.location.reload();
   completeButton.removeAttribute("disabled");
-  swipers.forEach((a) => (a.allowTouchMove = true));
+  swipers.forEach((swiper) => (swiper.allowTouchMove = true));
 };
 
 const handleClose = () => {
   modal.style.display = "none";
   completeButton.removeAttribute("disabled");
-  swipers.forEach((a) => (a.allowTouchMove = true));
+  swipers.forEach((swiper) => (swiper.allowTouchMove = true));
 };
 
 modalRestartButton.addEventListener("click", handleRestart);

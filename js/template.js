@@ -1,4 +1,4 @@
-import { data } from "./data.js";
+import { slideData } from "./data.js";
 let slideId = 0;
 let boxId = 0;
 
@@ -12,7 +12,7 @@ const slideTemplate = ({ src, alt }) => {
 
 export const slidesTemplate = (Index) => {
   const rectangle = `Rectangle${Index}`;
-  const rectangleData = data[rectangle];
+  const rectangleData = slideData[rectangle];
   const swiperID = `swiper${++slideId}`;
   let slides = "";
 

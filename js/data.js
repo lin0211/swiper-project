@@ -1,4 +1,4 @@
-export const data = {
+export const slideData = {
   Rectangle1: [
     {
       id: "1-1",
