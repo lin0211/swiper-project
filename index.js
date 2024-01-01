@@ -43,10 +43,11 @@ const handleRouteCheck = (e) => {
     }
   }
   if (status) {
-    moveBunny();
-    modalSetting("success", modalText, modalImg, modal, true);
+    moveBunny().then(() => {
+      modalSetting("success", modalText, modalImg, modal);
+    });
   } else {
-    modalSetting("fail", modalText, modalImg, modal, false);
+    modalSetting("fail", modalText, modalImg, modal);
   }
 };
 
