@@ -15,5 +15,6 @@ export const moveBunny = () => {
     .to("#bunny", { x: "37.5rem", y: "-22.5rem", ease: "none" })
     .to("#bunny", { x: "37.5rem", y: "-30rem", ease: "none" })
     .to("#bunny", { x: "45rem", y: "-30rem", ease: "none" })
-    .to("#carrot", { x: "1.875rem", y: "-0.625rem", scale: 0.3, ease: "none" });
+    .to("#carrot", { x: "1.875rem", y: "-0.625rem", scale: 0.3, ease: "none" })
+    .to(".modal-wrapper", { opacity: 1, display: "block" });
 };

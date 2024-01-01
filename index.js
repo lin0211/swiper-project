@@ -9,16 +9,16 @@ import {
 
 const swipers = [];
 const box = document.querySelectorAll(".box");
-const complete = document.querySelector(".completeBtn");
+const completeButton = document.querySelector(".completeButton");
 const slideTemplateOrder = [
   3, 1, 3, 2, 3, 2, 1, 3, 5, 4, 4, 3, 4, 3, 1, 1, 1, 5, 2, 3, 3, 3, 4, 1, 2,
 ];
 const modal = document.querySelector(".modal-wrapper");
-const modalRestartBtn = document.querySelector(".modalRestartBtn");
-const modalCloseBtn = document.querySelector(".modalCloseBtn");
+const modalRestartButton = document.querySelector(".modalRestartButton");
+const modalCloseButton = document.querySelector(".modalCloseButton");
 
 const modalText = document.querySelector(".modalText");
-const modalImg = document.querySelector(".modalImg");
+const modalImage = document.querySelector(".modalImage");
 
 slideTemplateOrder.forEach((item, index) => {
   insertLast(box[index], slidesTemplate(item));
@@ -43,27 +43,31 @@ const handleRouteCheck = (e) => {
     }
   }
   if (status) {
-    moveBunny().then(() => {
-      modalSetting("success", modalText, modalImg, modal);
-    });
+    // 애니메이션이 끝난 후 성공 모달창 활성화 시도
+    // moveBunny().then(() => {
+    //   modalSetting("success", modalText, modalImage, modal);
+    // });
+    moveBunny();
+    modalSetting("success", modalText, modalImage, modal, true);
   } else {
-    modalSetting("fail", modalText, modalImg, modal);
+    // modalSetting("fail", modalText, modalImage, modal);
+    modalSetting("fail", modalText, modalImage, modal, false);
   }
 };
 
-complete.addEventListener("click", handleRouteCheck);
+completeButton.addEventListener("click", handleRouteCheck);
 
 const handleRestart = () => {
   window.location.reload();
-  complete.removeAttribute("disabled");
+  completeButton.removeAttribute("disabled");
   swipers.forEach((a) => (a.allowTouchMove = true));
 };
 
 const handleClose = () => {
   modal.style.display = "none";
-  complete.removeAttribute("disabled");
+  completeButton.removeAttribute("disabled");
   swipers.forEach((a) => (a.allowTouchMove = true));
 };
 
-modalRestartBtn.addEventListener("click", handleRestart);
-modalCloseBtn.addEventListener("click", handleClose);
+modalRestartButton.addEventListener("click", handleRestart);
+modalCloseButton.addEventListener("click", handleClose);
