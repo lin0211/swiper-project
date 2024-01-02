@@ -1,6 +1,6 @@
 import { slideData } from "./data.js";
+
 let slideId = 0;
-let boxId = 0;
 
 const slideTemplate = ({ src, alt }) => {
   return /* html */ `
