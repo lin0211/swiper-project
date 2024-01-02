@@ -1,5 +1,5 @@
 import * as nodes from "./nodes.js";
-import { swipers } from "./swiper.js";
+import * as swiper from "./swiper.js";
 import { answer } from "./data.js";
 import { moveBunny } from "./animation.js";
 import { modalSetting } from "./modal.js";
@@ -7,24 +7,24 @@ import { modalSetting } from "./modal.js";
 export const restart = () => {
   window.location.reload();
   nodes.completeButton.removeAttribute("disabled");
-  swipers.forEach((swiper) => (swiper.allowTouchMove = true));
+  swiper.list.forEach((swiper) => (swiper.allowTouchMove = true));
 };
 
 export const close = () => {
   nodes.modal.style.display = "none";
   nodes.completeButton.removeAttribute("disabled");
-  swipers.forEach((swiper) => (swiper.allowTouchMove = true));
+  swiper.list.forEach((swiper) => (swiper.allowTouchMove = true));
 };
 
 export const routeCheck = (e) => {
   e.preventDefault();
 
   e.target.setAttribute("disabled", "");
-  swipers.forEach((swiper) => (swiper.allowTouchMove = false));
+  swiper.list.forEach((swiper) => (swiper.allowTouchMove = false));
 
   let isAnswer = true;
-  for (let i = 0; i < swipers.length; i++) {
-    if (!answer[`swipers[${i}]`].includes(swipers[i].realIndex)) {
+  for (let i = 0; i < swiper.list.length; i++) {
+    if (!answer[`swipers[${i}]`].includes(swiper.list[i].realIndex)) {
       isAnswer = false;
       break;
     }
