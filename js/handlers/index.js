@@ -36,6 +36,7 @@ export const restart = () => {
 };
 
 export const close = () => {
+  hideModal();
   enableCompleteButton(true);
   enableSwiperTouch(true);
 };
