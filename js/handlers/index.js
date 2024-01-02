@@ -52,21 +52,16 @@ const validate = () => {
   return isAnswer
 }
 
-export const routeCheck = (e) => {
+export const routeCheck = async (e) => {
   e.preventDefault();
   hideModal();
   enableCompleteButton(false);
   enableSwiperTouch(false);
 
   if (validate()) {
-    // 애니메이션이 끝난 후 성공 모달창 활성화 시도
-    // moveBunny().then(() => {
-    //   modalSetting("success", modalText, modalImage, modal);
-    // });
-    moveBunny();
+    await moveBunny();
     modalSetting("success", true);
   } else {
-    // modalSetting("fail", modalText, modalImage, modal);
     modalSetting("fail", false);
   }
 };
