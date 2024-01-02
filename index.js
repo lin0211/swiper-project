@@ -26,7 +26,7 @@ slideTemplateOrder.forEach((item, index) => {
 
 box.forEach((_, index) => {
   const boxNum = `#swiper${index + 1}`;
-  swipers[index] = new Swiper(boxNum, swiperSetting);
+  swipers[index] = new window.Swiper(boxNum, swiperSetting);
 });
 
 const handleRouteCheck = (e) => {
