@@ -1,16 +1,30 @@
-import { modalData } from "./data.js";
+import * as nodes from "./nodes.js";
 
+const modalData = {
+  success: {
+    message: "축하합니다! 토끼가 당근을 발견했네요!",
+    imgSrc: "../assets/modal-success.png",
+    imgAlt: "당근을 들고 있는 토끼",
+  },
+  fail: {
+    message: "다시 한번 토끼에게 당근을 찾아주세요!",
+    imgSrc: "../assets/modal-fail.png",
+    imgAlt: "눈물 흘리는 토끼",
+  },
+};
+
+/**
+ * @param status{'success' | 'fail'}
+ * @param animation{boolean}
+ */
 export const modalSetting = (
   status,
-  nodeText,
-  nodeImg,
-  nodeModal,
   animation
 ) => {
   const { message, imgSrc, imgAlt } = modalData[status];
-  nodeText.textContent = message;
-  nodeImg.src = imgSrc;
-  nodeImg.alt = imgAlt;
+  nodes.modalText.textContent = message;
+  nodes.modalImage.src = imgSrc;
+  nodes.modalImage.alt = imgAlt;
   if (animation) return;
-  nodeModal.style.display = "block";
+  nodes.modal.style.display = "block";
 };

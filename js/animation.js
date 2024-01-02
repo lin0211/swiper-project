@@ -1,5 +1,5 @@
 export const moveBunny = () => {
-  const tl = gsap.timeline({ repeat: 0 });
+  const tl = window.gsap.timeline({ repeat: 0 });
   tl.to("#bunny", { x: 0, y: 0, ease: "none" })
     .to("#bunny", { x: "7.5rem", ease: "none" })
     .to("#bunny", { x: "7.5rem", y: "-7.5rem", ease: "none" })
@@ -17,4 +17,6 @@ export const moveBunny = () => {
     .to("#bunny", { x: "45rem", y: "-30rem", ease: "none" })
     .to("#carrot", { x: "1.875rem", y: "-0.625rem", scale: 0.3, ease: "none" })
     .to(".modal-wrapper", { opacity: 1, display: "block" });
+
+  return tl;
 };

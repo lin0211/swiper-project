@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc.json",
+  "plugins": [],
+  "extends": ["eslint:recommended", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true
+  }
+}
